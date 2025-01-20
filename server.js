@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 app.get('/status-info',(req,res)=>{
-  const code = req.query.code
+  const code =parseInt(req.query.code,10);
 
   let status;
   let message;

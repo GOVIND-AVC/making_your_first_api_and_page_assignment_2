@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js",
-    "serve": "server.js"
+    "start": "node server.js",
+    "serve": "node server.js"
   },
   "author": "",
   "license": "ISC",
