@@ -2,7 +2,7 @@
 const express = require('express')
 const app = express()
 
-app.get('"/status-info',(req,res)=>{
+app.get('/status-info',(req,res)=>{
   const code = req.query.code
 
   let status;
@@ -12,42 +12,57 @@ app.get('"/status-info',(req,res)=>{
     case 200:
       status=200;
       message="OK: The request has succeeded. The meaning of this status depends on the HTTP method used.";
+      break;
     case 404:
       status=404;
       message="Not Found: The server has not found anything matching the request URI. This is often caused by a missing page or resource.";
+      break;
     case 500:
       status=500;
       message="Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request.";
+      break;
     case 400:
       status=400;
       message="Bad Request: The server cannot process the request due to client-side errors (e.g., malformed syntax).";
+      break;
     case 201:
       status=201;
       message="the request was successfully fulfilled and resulted in one or possibly multiple new resources being created.";
+      break;
     case 204:
       status=204;
       message=" the server successfully processed the client's request but does not need to return any content.";
+      break;
     case 401:
       status=401;
       message="the request lacks valid authentication credentials for the requested resource."
+      break;
     case 403:
       status=403;
       message="access to the requested resource is forbidden"
+      break;
     case 405:
       status=405;
       message=" the server has received a request method that is not supported for the target resource."
+      break;
     case 429:
       status=429;
       message="Too Many Requests "
+      break;
     case 502:
       status=502;
       message=" the server acting as a gateway or proxy was unable to connect to the upstream server or received an invalid response from it."
+      break;
     case 503:
       status=503;
       message=" the server is currently unable to handle the incoming requests"
+      break;
     case 504:
       status=504;
-      message="gateway timeout"   
+      message="gateway timeout"  
+      break;
+    default:
+      message="status code not recognized"
 
   }
 
